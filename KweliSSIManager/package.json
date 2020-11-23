@@ -1,0 +1,47 @@
+{
+  "name": "kweliwallet",
+  "version": "0.0.1",
+  "description": "Service as a Wallet for Kweli",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "mocha --recursive --exit"
+  },
+  "keywords": [
+    "secure",
+    "register",
+    "configuration"
+  ],
+  "author": "S. Solomon Darnell",
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "formik": "^1.5.8",
+    "http-errors": "~1.6.3",
+    "indy-sdk": "^1.14.1-dev-1454",
+    "mkdirp": "^1.0.3",
+    "mongoose": "^5.7.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^1.19.2",
+    "pug": "latest",
+    "react": "^16.12.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@popperjs/core": "^2.0.6",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mocha": "*",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

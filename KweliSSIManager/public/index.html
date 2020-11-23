@@ -1,0 +1,428 @@
+﻿<!DOCTYPE HTML>
+<!--
+-->
+<html>
+	<head>
+		<title>Kweli Wallet</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="stylesheets/bootstrap.css">
+		<link rel="stylesheet" href="stylesheets/main.css" />
+		<noscript><link rel="stylesheet" href="stylesheets/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+						  <!-- Logo -->
+						  <a href="index.html" class="logo">
+						    <span class="symbol"><img src="images/vybeid_logo.png" alt="" /></span><span class="title">Kweli is Pan-African ID </span>
+						  </a>
+						  <!-- Nav -->
+						  <nav>
+						    <ul>
+							</ul>
+						  </nav>
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="elements.html">Search</a></li>
+							<li><a href="generic.html">Lists</a></li>
+						</ul>
+					</nav>
+
+					<!-- ------------------------------------------------------------------------------------------------ -->
+					<!-- Modal: Wallet Manager Login -->
+					<div class="modal fade right" id="walletManagerLoginForm" tabindex="-1" role="dialog" aria-labelledby="modalWalletManager"
+						aria-hidden="true" data-backdrop="false">
+						<div class="modal-dialog modal-notify modal-info" role="document">
+							<div class="modal-content">
+								<!--Header-->
+								<div class="modal-header">
+									<p class="heading lead">
+										<h2>Wallet Manager Login</h2>
+									</p>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true" class="white-text">×</span>
+									</button>
+								</div>
+								<!--Body-->
+								<div class="modal-body">
+									<!--  -->
+									<div class="row">
+										<div class="col">
+											<label>Name</label><input type="text" id="yWalletName" placeholder="WalletRandom"/>
+											<label>Credentials</label><input type="password" id="yWalletCredentials" placeholder="walletcreds"/>
+								            <div id="thePoolPass">
+											<label>Secret</label><input type="password" id="yPoolPass" placeholder="Come on nah"/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--Footer-->
+								<div class="modal-footer justify-content-center">
+									<a type="button" class="btn btn-primary waves-effect waves-light" id="btn_loginWalletManager">Set Values
+										<i class="fa fa-paper-plane ml-1"></i>
+									</a>
+									<a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+					<!-- ------------------------------------------------------------------------------------------------ -->
+					<!-- Modal: Manage Wallets -->
+										<!--
+										<div class="col">
+											<button id="btn_walletExists">Does Wallet Exist</button>
+											<button id="btn_createWallet">Create Wallet</button>
+											<button id="btn_closeWallet">Close Wallet</button>
+										</div>
+										-->
+					<div class="modal fade right" id="walletManagementForm" tabindex="-1" role="dialog" aria-labelledby="modalWalletManagement"
+						aria-hidden="true" data-backdrop="false">
+						<div class="modal-dialog modal-notify modal-info" role="document">
+							<div class="modal-content">
+								<!--Header-->
+								<div class="modal-header">
+									<p class="heading lead">
+										<h2>Wallet Management Interface</h2>
+									</p>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true" class="white-text">×</span>
+									</button>
+								</div>
+								<!--Body-->
+								<div class="modal-body">
+									<!--  -->
+									<div class="row">
+										<div class="col">
+											<label>Available Wallets</label>
+											<select name="list_normalWallets" size="7">
+											</select>
+										</div>
+										<div id="div_manageWalletNameCreds" class="col">
+											<label>Name</label><input type="text" id="normalWalletName" placeholder="Company name"/>
+											<label>Credentials</label><input type="password" id="normalWalletCredentials" placeholder="Dat password"/>
+										</div>
+										<div id="div_manageWalletExecution" class="col">
+											<button id="btn_walletExists">Does Wallet Exist</button>
+											<button id="btn_createWallet">Create Wallet</button>
+											<button id="btn_closeWallet">Close Wallet</button>
+										</div>
+									</div>
+								</div>
+								<!--Footer-->
+								<div class="modal-footer justify-content-center">
+									<!-- 
+										<a type="button" class="btn btn-primary waves-effect waves-light" id="btn_loginWalletManager">Set Values
+										<i class="fa fa-paper-plane ml-1"></i>
+									</a>
+								  -->
+									<a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+					<!-- ------------------------------------------------------------------------------------------------ -->
+					<!-- ------------------------------------------------------------------------------------------------ -->
+					<!-- Modal: Enrollment Settings -->
+					<div class="modal fade right" id="enrollmentConfigForm" tabindex="-1" role="dialog" aria-labelledby="modalEnrollmentConfig"
+						aria-hidden="true" data-backdrop="false">
+						<div class="modal-dialog modal-notify modal-info" role="document">
+							<div class="modal-content">
+								<!--Header-->
+								<div class="modal-header">
+									<p class="heading lead">
+										<h2>Manage settings for Enrollment Service</h2>
+									</p>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true" class="white-text">×</span>
+									</button>
+								</div>
+
+								<!--Body-->
+								<div class="modal-body">
+									<!--  -->
+									<div class="row">
+										<div class="col">
+											<label>Biometric Service IP</label><input type="text" id="biometricserviceaddress" placeholder="52.226.144.223"/>
+											<label>Biometric Service Port</label><input type="text" id="biometricserviceport" placeholder="24932"/>
+											<label>Endpoint Home</label><input type="text" id="endpointhome" placeholder="/SecureBioAPI"/>
+											<label>Authentication Path</label><input type="text" id="authpath" placeholder="/Authentication/Authenticate"/>
+										</div>
+										<div class="col">
+											<label>Enrollment Path</label><input type="text" id="enrollpath" placeholder="/EnrollBiometrics/Enroll"/>
+											<label>Verification Path</label><input type="text" id="verifypath" placeholder="/VerifyBiometrics/Verify"/>
+											<label>Identification Path</label><input type="text" id="idpath" placeholder="/IdentifyBiometrics/Identify"/>
+											<label>Update Path</label><input type="text" id="updatepath" placeholder="/UpdateBiometrics/Update"/>
+										</div>
+									</div>
+									<HR>
+									<!-- Checkboxes -->
+									<div class="form-check mb-4 row">
+										<div class="col">
+											<input class="form-check-input" type="checkbox" name="rightiris" id="rightiris" value="rightiris">
+											<label class="form-check-label" for="rightiris">
+												<img class="modality" src="images/right_iris.jpg" alt="should be an image of a right iris"/>
+												<br/>Right Iris 
+											</label>
+										</div>
+										<div class="col">
+											<input class="form-check-input" name="leftiris" type="checkbox" id="leftiris" value="leftiris">
+											<label class="form-check-label" for="leftiris">
+												<img class="modality" src="images/left_iris.jpg" alt="left iris"/>
+												<br/>Left iris
+											</label>
+										</div>
+									</div>
+									<hr>
+									<!-- Face checkboxes -->
+									<div class="form-check mb-4 row">
+										<div class="col">
+											<input class="form-check-input" type="checkbox" name="frontface" id="frontface" value="takeFrontFace">
+											<label class="form-check-label" for="frontface">
+												<img class="modality" src="images/frontface_mtoto.png" alt="front face"/><br/>Front Face 
+											</label>
+										</div>
+										<div class="col">
+											<input class="form-check-input" type="checkbox" name="face45left" id="face45left" value="take45LeftFace">
+											<label class="form-check-label" for="face45left">
+												<img class="modality" src="images/grid face 45 left.jpg" alt="face 45 degrees left"/>
+												<br/>Face 45 degrees left
+											</label>
+										</div>
+										<div class="col">
+											<input class="form-check-input" type="checkbox" name="face45right" id="face45right" value="take45RightFace">
+											<label class="form-check-label" for="face45right">
+												<img class="modality" src="images/grid face 45 right.jpg" alt="face 45 degrees right"/>
+												<br/>Face 45 degrees right
+											</label>
+										</div>
+									</div>
+									<hr>
+
+									<!-- Fingerprint checkboxes -->
+									<div class="form-check mb-4 row">
+										<div class="col">
+											<input class="form-check-input" type="checkbox" name="leftlittlefp" id="leftlittlefp" value="takeLeftLittleFP">
+											<label class="form-check-label" for="leftlittlefp">
+												<img class="fingermodality" src="images/fp_01_one.png" alt="should be an image of a fingerprint"/>
+												<br/>LL FP
+											</label>
+											<input class="form-check-input" type="checkbox" name="leftringfp" id="leftringfp" value="takeLeftRingFP">
+											<label class="form-check-label" for="leftringfp">
+												<img class="fingermodality" src="images/fp_02_two.png" alt="should be an image of a fingerprint"/>
+												<br/>LR FP
+											</label>
+											<input class="form-check-input" type="checkbox" name="leftmiddlefp" id="leftmiddlefp" value="takeLeftMiddleFP">
+											<label class="form-check-label" for="leftmiddlefp">
+												<img class="fingermodality" src="images/fp_03_three.png" alt="should be an image of a fingerprint"/>
+												<br/>LM FP
+											</label>
+										</div>
+										<div class="col">
+											<input class="form-check-input" type="checkbox" name="rightlittlefp" id="rightlittlefp" value="takeRightLittleFP">
+											<label class="form-check-label" for="rightlittlefp">
+												<img class="fingermodality" src="images/fp_01_one.png" alt="fp image"/>
+												<br/>RL FP
+											</label>
+											<input class="form-check-input" type="checkbox" name="rightringfp" id="rightringfp" value="takeRightRingFP">
+											<label class="form-check-label" for="rightringfp">
+												<img class="fingermodality" src="images/fp_02_two.png" alt="right ring fingerprint"/>
+												<br/>RR FP
+											</label>
+											<input class="form-check-input" type="checkbox" name="rightmiddlefp" id="rightmiddlefp" value="takeRightMiddleFP">
+											<label class="form-check-label" for="rightmiddlefp">
+												<img class="fingermodality" src="images/fp_03_three.png" alt="right middle fingerprint"/>
+												<br/>RM FP
+											</label>
+										</div>
+									</div>
+									<div class="form-check mb-4 row">
+										<div class="col">
+											<input class="form-check-input" type="checkbox" name="leftindexfp" id="leftindexfp" value="takeLeftIndexFP">
+											<label class="form-check-label" for="leftindexfp">
+												<img class="fingermodality" src="images/fp_04_four.png" alt="should be an image of a fingerprint"/>
+												<br/> LP FP
+											</label>
+											<input class="form-check-input" type="checkbox" name="leftthumbfp" id="leftthumbfp" value="takeLeftThumbFP">
+											<label class="form-check-label" for="leftthumbfp">
+												<img class="fingermodality" src="images/fp_05_five.png" alt="should be an image of a fingerprint"/>
+												<br/> LT FP
+											</label>
+										</div>
+										<div class="col">
+											<input class="form-check-input" type="checkbox" name="rightindexfp" id="rightindexfp" value="takeRightIndexFP">
+											<label class="form-check-label" for="rightindexfp">
+												<img class="fingermodality" src="images/fp_04_four.png" alt="right index fingerprint"/>
+												<br/>RP FP
+											</label>
+											<input class="form-check-input" type="checkbox" name="rightthumbfp" id="rightthumbfp" value="takeRightThumbFP">
+											<label class="form-check-label" for="rightthumbfp">
+												<img class="fingermodality" src="images/fp_05_five.png" alt="right thumb fingerprint"/>
+												<br/> RT FP
+											</label>
+										</div>
+									</div>
+									<!-- END Checkboxes -->
+								</div>
+
+								<!--Footer-->
+								<div class="modal-footer justify-content-center">
+									<a type="button" class="btn btn-primary waves-effect waves-light" id="enrollmentSubmit">Set Values
+										<i class="fa fa-paper-plane ml-1"></i>
+									</a>
+									<a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Modal: Enrollment Form -->
+					<!-- Modal: Biometric Settings -->
+					<div class="modal fade right" id="biometricsConfigForm" tabindex="-1" role="dialog" aria-labelledby="modalBiometricsConfig"
+						aria-hidden="true" data-backdrop="false">
+						<div class="modal-dialog modal-notify modal-info" role="document">
+							<div class="modal-content">
+								<!--Header-->
+								<div class="modal-header">
+									<p class="heading lead">
+										<h2>Manage settings for Biometric Service</h2>
+									</p>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true" class="white-text">X</span>
+									</button>
+								</div>
+
+								<!--Body-->
+								<div class="modal-body">
+									<div class="form-group center">
+										<p><h2>General settings</h2></p>
+									</div>
+									<div class="row">
+										<div class="col-md-4 center">
+											<label>ABIS Server address</label><input type="text" id="abisserveraddress" placeholder="52.226.144.223"/>
+											<label>ABIS Server port</label><input type="text" id="abisserverport" placeholder="24932"/>
+										</div>
+										<div class="col-md-4 center">
+											<label>Identification match score</label><input type="text"   id="idmatchscore"     placeholder="100"/>
+											<label>Verification match score</label><input   type="text"   id="verifymatchscore" placeholder="100"/>
+											<label>Match Threshold</label><input            type="number" id="matchthreshold"   placeholder="48" />
+										</div>
+									</div>
+									<HR>
+									<div class="form-group center">
+										<p><h2>Finger, Iris & Face settings</h2></p>
+									</div>
+									<div class="row center">
+										<div class="col-md-4 center">
+											<label>Finger Maximal Rotation</label>     <input type="text" id="fpmaxrot"                   placeholder="30"/>
+											<label>Finger Quality Threshold</label>    <input type="text" id="fingersqualitythreshold"    placeholder="24"/>
+											<label>Finger Minimal Minutia Count</label><input type="text" id="fingersminimalminutiacount" placeholder="10"/>
+										</div>
+										<div class="col-md-4 center">
+											<label>Iris Maximal Rotation</label> <input type="number" id="irisesmaximalrotation"  placeholder="30"/>
+											<label>Iris Quality Threshold</label><input type="number" id="irisesqualitythreshold" placeholder="24"/>
+											<label>Face Quality Threshold</label><input type="number" id="facequalitythreshold"   placeholder="24"/>
+										</div>
+									</div>
+								</div>
+
+								<!--Footer-->
+								<div class="modal-footer justify-content-center">
+									<a type="button" class="btn btn-primary waves-effect waves-light" id="biometricsSubmit">Set Values
+										<i class="fa fa-paper-plane ml-1"></i>
+									</a>
+									<a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Modal: Biometrics Form -->
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Kweli Registration and Wallet Manager</h1><br />
+							</header>
+							<section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic10.jpg" alt="" />
+									</span>
+									<a id="#walletManagerLoginForm" href="#walletManagerLoginForm" data-toggle="modal" data-target="#walletManagerLoginForm">
+										<h2>Wallet Manager Login</h2>
+										<div class="content">
+											<p>Create, list, delete and determine config options for wallets.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="images/pic05.jpg" alt="" />
+									</span>
+									<a href="#walletManagementForm" data-toggle="modal" data-target="#walletManagementForm">
+										<h2>Manage Wallets</h2>
+										<div class="content">
+											<p>Create wallets and DiDs for them.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<!--<img src="images/biomodality.jpg" alt="" />-->
+										<img src="images/pic01.jpg" alt="" />
+									</span>
+									<a id="#didManagementForm" href="#didManagementForm" data-toggle="modal" data-target="#didManagementForm">
+										<h2>Manage DiDs</h2>
+										<div class="content">
+											<p>Manage DiDs for selected wallet.</p>
+										</div>
+									</a>
+								</article>
+							</section>
+					</div>
+				</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://github.com/AfricanDigitalAssetFramework/kweli" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/company/vibranium-id/" class="icon brands style2 fa-linkedin"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Vibranium ID - Pan-African Identity & Solomon D. Ventures. All rights reserved 2020.</li></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+
+		<!-- Scripts -->
+			<script src="javascripts/jquery.min.js"></script>
+			<script src="javascripts/browser.min.js"></script>
+			<script src="javascripts/breakpoints.min.js"></script>
+			<script src="javascripts/util.js"></script>
+			<script src="javascripts/main.js"></script>
+			<script src="javascripts/popper.js"></script>
+			<script src="javascripts/bootstrap.js"></script>
+			<script src="javascripts/axios.js"></script>
+			<script src="javascripts/handleSubmits.js"></script>
+	</body>
+</html>

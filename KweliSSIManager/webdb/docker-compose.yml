@@ -1,0 +1,35 @@
+version: '3'
+services:
+    webdb:
+        image: mongo:latest
+        #command: --smallfiles
+        ports:
+            - 27017:27017
+        volumes:
+            - '/data/tmp/kweli_mongo_db:/data/db'
+    indy_pool:
+        image: indy_pool
+        ports:
+            - 9701:9701
+            - 9702:9702
+            - 9703:9703
+            - 9704:9704
+            - 9705:9705
+            - 9706:9706
+            - 9707:9707
+            - 9708:9708
+    mongoex:
+        image: mongo-express
+        volumes:
+            - '/data/tmp/kweli_mongo_db:/data/db'
+        environment:
+        - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
+        - ME_CONFIG_MONGODB_SERVER=webdb
+        - ME_CONFIG_MONGODB_PORT=27017
+        #- ME_CONFIG_MONGODB_ENABLE_ADMIN=false
+        #- ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+        restart: always
+        ports:
+        - 8081:8081
+        links:
+        - webdb

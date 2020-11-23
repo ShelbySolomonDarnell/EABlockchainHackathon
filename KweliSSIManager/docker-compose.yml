@@ -1,0 +1,24 @@
+version: '3'
+services:
+  mongoex:
+    image: mongo-express
+    environment:
+    - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
+    - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+    - ME_CONFIG_MONGODB_SERVER=webdb
+    - ME_CONFIG_MONGODB_PORT=27017
+    - ME_CONFIG_MONGODB_ENABLE_ADMIN=true #false
+    ports:
+    - "8081:8081"
+    links:
+    - webdb
+  webdb:
+    image: mongo:latest
+    #command: --smallfiles
+    ports:
+      - "27017:27017"
+  #api:
+  #  image: kweliwallet:latest
+  #  build: .
+  #  ports:
+  #    - "3005:3000"
